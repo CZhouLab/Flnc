@@ -59,27 +59,27 @@ The Flnc tool has two subcommands single and pair. The single subcommand can tak
 
 -	The reference gene annotation should be the GTF format file for hg38 assembly.
 
-**Usage:** python2 Flnc.py {pair,single} -l LIBRARY -o OUTPUT_DIR -f {fastq,fasta,bed} {-1 FILE1 -2 FILE2 | -u FILE} [optional options]
+**Usage:** 
+```bash
+python2 Flnc.py {pair,single} -l LIBRARY -o OUTPUT_DIR -f {fastq,fasta,bed} {-1 FILE1 -2 FILE2 | -u FILE} [optional options]
 
 When running Flnc with paired RNA-seq data, it is critical that the *_1 files and the *_2 files of replicates appear in separate comma-delimited lists, and that the order of the files in the two lists is the same.
 
-**Subcommands:**&emsp;choose one of the subcommands {pair,single}                
+**Subcommands:		choose one of the subcommands {pair,single}                
 
 **Arguments:**
 
--f, --format&emsp;The format of the input file: fastq, or fasta or bed.
+	-f, --format	The format of the input file: fastq, or fasta or bed.
+                  	If using the pair subcommand, the format must be “fastq”.	    
+                  	If using single subcommand, the format can be fastq, or fasta, or bed.
 
-                  If using the pair subcommand, the format must be “fastq”.
-		    
-                  If using single subcommand, the format can be fastq, or fasta, or bed.
+	-1 FILE1	This argument is mandatory if using the pair subcommand. 
+			Full path of the mate 1 file of paired FASTQ files, paired with the mate 2 file specified with “-2 ” option.
+			The mate 1 of replicates can be input through comma delimitation, e.g., “<path>/Rep1_1.fastq,<path>/Rep2_1.fastq”.
 
--1 FILE1	This argument is mandatory if using the pair subcommand. 
-Full path of the mate 1 file of paired FASTQ files, paired with the mate 2 file specified with “-2 ” option.
-The mate 1 of replicates can be input through comma delimitation, e.g., “<path>/Rep1_1.fastq,<path>/Rep2_1.fastq”.
-
--2 FILE2	This argument is mandatory if using the pair subcommand.
-Full path of the mate 2 file of paired FASTQ files, paired with the mate 1 file specified with “-1 ” option. 
-The mate 2 of replicates can be input through comma delimitation, e.g., “<path>/Rep1_2.fastq,<path>/Rep2_2.fastq”.
+	-2 FILE2	This argument is mandatory if using the pair subcommand.
+			Full path of the mate 2 file of paired FASTQ files, paired with the mate 1 file specified with “-1 ” option. 
+			The mate 2 of replicates can be input through comma delimitation, e.g., “<path>/Rep1_2.fastq,<path>/Rep2_2.fastq”.
 
 -u FILE	This argument is mandatory if using the single subcommand.
 Full path of the single input file. 
@@ -116,7 +116,7 @@ Default: first
 -h/--help 		Show help message and exit
 
 -v/--version		Print version
-
+```
 
 
 
