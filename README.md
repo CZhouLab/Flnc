@@ -149,16 +149,18 @@ If the input file is in the FASTA or BED format, it will output the following fo
 (1) true_lncRNA.<model>.bed: contains the true lncRNAs predicted by the selected model in standard BED format with the full 12 fields. (https://genome.ucsc.edu/FAQ/FAQformat.html#format1)
 
 (2) true_lncRNA_infor.<model>.txt: contains the expression and genomic features information of the identified true lncRNAs as follows.
-Column 1. Transcript_ID (same as the 4th column in true_lncRNA.bed)
-Column 2. Locus ID 
-Column 3. Whether the transcript has multiple exons (1: YES; 0: NO)
-Column 4. Whether the transcript is divergent (1:YES; 0: NO)
-Column 5. Whether the transcript is antisense (1:YES; 0: NO)
-Column 6. Whether the transcript locates within intergenic region (1:YES; 0: NO)
-Column 7. Is there any promoter signature predicted by TSSG (1:YES; 0: NO)
-Column 8. Transcript length
-Column 9. FPKM (normalized by the total mapped reads) 
-Column 10. Read count calculated by HTSeq tool
+| Field(column)| Description                                   |
+| :-----------:| :---------------------------------------------|
+| TranscriptID	       | Transcript ID (same as the 4th column in true_lncRNA.bed)                                   |
+| LocusID	       | Locus ID                             |
+| Multi_Exon	       | Whether the transcript has multiple exons (1: YES; 0: NO)                               |
+| Divergent    | Whether the transcript is divergent (1:YES; 0: NO)              |
+| Antisense     | Whether the transcript is antisense (1:YES; 0: NO)       |
+| Intergenic  | Whether the transcript locates within intergenic region (1:YES; 0: NO)                           |
+| Promoter     | Is there any promoter signature predicted by TSSG (1:YES; 0: NO)     |
+| TranscriptLength    | Transcript length |
+| Rep*_FPKM    | FPKM (normalized by the total mapped reads) |
+| Rep*_ReadCount    | Read count calculated by HTSeq tool |
 
 (3) putative_lncRNAs.bed: Contains putative lncRNAs, which are transcripts without coding abilities. The BED file follows the standard BED format with the full 12 fields. (https://genome.ucsc.edu/FAQ/FAQformat.html#format1)
 
