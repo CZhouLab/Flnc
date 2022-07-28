@@ -38,7 +38,7 @@ To use Flnc, you will need the following programs in your PATH:
 ```bash
 git clone https://github.com/CZhouLab/Flnc
 cd Flnc
-chmod 755 Flnc.py
+chmod 755 *.py
 ```
 
 ### Step 2: Download LIB folder from https://zhoulab.umassmed.edu/Flnc_data/
