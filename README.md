@@ -72,23 +72,18 @@ Arguments:
 	-f, --format	The format of the input file: fastq, or fasta or bed.
                   	If using the pair subcommand, the format must be “fastq”.	    
                   	If using single subcommand, the format can be fastq, or fasta, or bed.
-
 	-1 FILE1	This argument is mandatory if using the pair subcommand. 
 			Full path of the mate 1 file of paired FASTQ files, paired with the mate 2 file specified with “-2 ” option.
 			The mate 1 of replicates can be input through comma delimitation, e.g., “<path>/Rep1_1.fastq,<path>/Rep2_1.fastq”.
-
 	-2 FILE2	This argument is mandatory if using the pair subcommand.
 			Full path of the mate 2 file of paired FASTQ files, paired with the mate 1 file specified with “-1 ” option. 
 			The mate 2 of replicates can be input through comma delimitation, e.g., “<path>/Rep1_2.fastq,<path>/Rep2_2.fastq”.
-
 	-u FILE		This argument is mandatory if using the single subcommand.
 			Full path of the single input file. 
 			If “-f fastq”, please input the full path of FASTQ file of single-end RNA-seq data. FASTQ files for replicates can be input through comma delimitation, For example, “<path>/Rep1.fastq,<path>/Rep2.fastq”. 
 			If “-f fasta”, please input the full path of files with transcripts in FASTA format.
 			If “-f bed”, please input the full path of files with transcripts in BED format.
-
 	-l --library	Full path of the LIB folder, which can be downloaded from https://zhoulab.umassmed.edu/Flnc_data/LIB/
-
 	-o --output_dir	Please specify the name of the output folder. This must be specified as a full path. For example, “-o /home/username/Flnc_sample1_output”.
 
 Options:
