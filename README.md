@@ -6,12 +6,16 @@ Flnc is software that can accurately identify full-length long noncoding RNAs (l
 
 Flnc integrates seven machine-learning algorithms built with four genomic features. Flnc achieves state-of-the-art prediction power with a AUROC score over 0.92. Flnc significantly improves the prediction accuracy from less than 50% using the common approach to over 85% on five independent datasets without requiring matched H3K4me3 ChIP-seq data. In addition to the stranded polyA-selected RNA-seq data, Flnc can also be applied to identify lncRNAs from stranded RNA-seq data of ribosomal RNA depleted samples or unstranded RNA-seq data of polyA-selected samples. 
 
+![workflow](Picture1.png)
 
 **Please cite our paper at BioRxiv, if you find Flnc useful for your research. The paper has been submitted to a peer-reviewed journal**
 
 Version: 1.0.0
+
 Last Modified: 07/27/2022
+
 Authors: Zixiu Li (zixiu.li@umassmed.edu), Chan Zhou (chan.zhou@umassmed.edu)
+
 Maintainer: Zixiu Li
 
 
@@ -19,9 +23,10 @@ Maintainer: Zixiu Li
 
 To use Flnc, you will need the following programs in your PATH:
 •       singularity (>=3.7.1)
-•       python2 (>=2.7.18) 
-•       OS: high performance computing cluster in Linux (suggested)
-•       Reference genome: hg38
 
-![workflow](Picture1.png)
+•       python2 (>=2.7.18) 
+
+•       OS: high performance computing cluster in Linux (suggested)
+
+•       Reference genome: hg38
 
