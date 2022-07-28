@@ -72,3 +72,4 @@ When running Flnc with paired RNA-seq data, it is critical that the *_1 files an
 
 
 
+
