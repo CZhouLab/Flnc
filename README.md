@@ -59,7 +59,7 @@ The Flnc tool has two subcommands single and pair. The single subcommand can tak
 
 -	The reference gene annotation should be the GTF format file for hg38 assembly.
 
-**Usage:** 
+**Usage** 
 ```bash
 python2 Flnc.py {pair,single} -l LIBRARY -o OUTPUT_DIR -f {fastq,fasta,bed} {-1 FILE1 -2 FILE2 | -u FILE} [optional options]
 
@@ -109,13 +109,14 @@ Options:
 	-v/--version	Print version
 ```
 
-## Examples:
+## Examples
 
 The sample input files are available from https://zhoulab.umassmed.edu/Flnc_data/example.zip
 
 **Example 1: Identify lncRNAs from single-end RNA-seq data with single replicate by default parameters**
+```bash
 python2 Flnc.py single -f fastq -u /home/username/Flnc/example/GSM3039399.fastq.gz -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output1 -s first
-
+```
 **Example 2: Identify lncRNAs with customized model**
 python2 Flnc.py single -f fastq -u /home/username/Flnc/example/GSM3039399.fastq.gz -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output2 -s first -m ensemble
 
@@ -133,6 +134,8 @@ python2 Flnc.py single -f fasta -u /home/username/Flnc/example/Test.fa -l /home/
 
 **Example 7: Evaluate if or not the input transcripts (in BED format) are true lncRNAs**
 python2 Flnc.py single -f bed -u /home/username/Flnc/example/Test.bed -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output7
+
+## Output files
 
 
 
