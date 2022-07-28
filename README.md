@@ -32,9 +32,9 @@ To use Flnc, you will need the following programs in your PATH:
 •       Reference genome: hg38
 
 
-# Installation
+## Installation
 
-## Step 1: Download Flnc software from GitHub
+### Step 1: Download Flnc software from GitHub
 
 git clone https://github.com/CZhouLab/Flnc
 
@@ -42,7 +42,7 @@ cd Flnc
 
 chmod 755 Flnc.py
 
-## Step 2: Download LIB folder from https://zhoulab.umassmed.edu/Flnc_data/
+### Step 2: Download LIB folder from https://zhoulab.umassmed.edu/Flnc_data/
 
 wget -rc https://zhoulab.umassmed.edu/Flnc_data/LIB
 
