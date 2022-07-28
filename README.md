@@ -65,6 +65,56 @@ The Flnc tool has two subcommands single and pair. The single subcommand can tak
 
 When running Flnc with paired RNA-seq data, it is critical that the *_1 files and the *_2 files of replicates appear in separate comma-delimited lists, and that the order of the files in the two lists is the same.
 
+Subcommands:		choose one of the subcommands {pair,single}                
+
+Arguments:
+-f, --format 		The format of the input file: fastq, or fasta or bed
+                       	 	If using the pair subcommand, the format must be “fastq”.
+                       	 	If using single subcommand, the format can be fastq, or fasta, or bed.
+
+-1 FILE1	This argument is mandatory if using the pair subcommand. 
+Full path of the mate 1 file of paired FASTQ files, paired with the mate 2 file specified with “-2 ” option.
+The mate 1 of replicates can be input through comma delimitation, e.g., “<path>/Rep1_1.fastq,<path>/Rep2_1.fastq”.
+
+-2 FILE2	This argument is mandatory if using the pair subcommand.
+Full path of the mate 2 file of paired FASTQ files, paired with the mate 1 file specified with “-1 ” option. 
+The mate 2 of replicates can be input through comma delimitation, e.g., “<path>/Rep1_2.fastq,<path>/Rep2_2.fastq”.
+
+-u FILE	This argument is mandatory if using the single subcommand.
+Full path of the single input file. 
+If “-f fastq”, please input the full path of FASTQ file of single-end RNA-seq data. FASTQ files for replicates can be input through comma delimitation, For example, “<path>/Rep1.fastq,<path>/Rep2.fastq”. 
+If “-f fasta”, please input the full path of files with transcripts in FASTA format.
+If “-f bed”, please input the full path of files with transcripts in BED format.
+
+-l --library	Full path of the LIB folder, which can be downloaded from https://zhoulab.umassmed.edu/Flnc_data/LIB/
+
+-o --output_dir	Please specify the name of the output folder. This must be specified as a full path. For example, “-o /home/username/Flnc_sample1_output”.
+
+Options:
+-g --gtf_file		Full path of the reference gene annotation file in GTF format. 
+			Default: gencode.v29.annotation.gtf in the LIB folder.
+
+-m --model		Choose the abbreviation of one of the following models: 
+			rf: random forest
+			lr: logistic regression
+			nb: naïve Bayes
+			dt: decision tree
+			knn: k-nearest neighbors
+			rbfsvm: support vector machines with RBF kernel
+			lsvm: support vector machines with linear kernel
+			ensemble: the common result predicted by all models 
+			Default: rf
+
+-s --strand	This option is required only if “-f fastq”, otherwise this argument is not needed.
+Specify strand-specific information with the following three options: 
+first: corresponds to fr-firststrand of the –library-type option in the TopHat tool for stranded RNA-seq data
+second: corresponds to fr-secondstrand of the –library-type option in the TopHat tool for stranded RNA-seq data
+unstrand: specific for unstranded RNA-seq data
+Default: first 
+
+-h/--help 		Show help message and exit
+
+-v/--version		Print version
 
 
 
