@@ -113,25 +113,25 @@ Options:
 
 The sample input files are available from https://zhoulab.umassmed.edu/Flnc_data/example.zip
 
-Example 1: Identify lncRNAs from single-end RNA-seq data with single replicate by default parameters
+**Example 1: Identify lncRNAs from single-end RNA-seq data with single replicate by default parameters**
 python2 Flnc.py single -f fastq -u /home/username/Flnc/example/GSM3039399.fastq.gz -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output1 -s first
 
-Example 2: Identify lncRNAs with customized model
+**Example 2: Identify lncRNAs with customized model**
 python2 Flnc.py single -f fastq -u /home/username/Flnc/example/GSM3039399.fastq.gz -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output2 -s first -m ensemble
 
-Example 3: Identify lncRNAs with customized gene annotation file (e.g. /home/username/Flnc/gencode.v30.gtf)
+**Example 3: Identify lncRNAs with customized gene annotation file (e.g. /home/username/Flnc/gencode.v30.gtf)**
 python2 Flnc.py single -f fastq -u /home/username/Flnc/example/GSM3039399.fastq.gz -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output3 -s first -g /home/username/Flnc/gencode.v30.gtf
 
-Example 4: Identify lncRNAs from single-end RNA-seq data with three replicates by default parameters
+**Example 4: Identify lncRNAs from single-end RNA-seq data with three replicates by default parameters**
 python2 Flnc.py single -f fastq -u /home/username/Flnc/example/GSM1462975.fastq.gz, /home/username/Flnc/example/GSM1462976.fastq.gz,/home/username/Flnc/example/ GSM1462977.fastq.gz -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output4 -s first
 
-Example 5: Identify lncRNAs from paired-end RNA-seq data with single replicate by default parameters
+**Example 5: Identify lncRNAs from paired-end RNA-seq data with single replicate by default parameters**
 python2 Flnc.py pair -f fastq -1 /home/username/Flnc/example/GSM4193226_1.fastq.gz -2 /hom/username/Flnc/example/GSM4193226_2.fastq.gz -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output5 -s first
 
-Example 6: Evaluate if or not the input transcripts (in FASTA format) are true lncRNAs 
+**Example 6: Evaluate if or not the input transcripts (in FASTA format) are true lncRNAs **
 python2 Flnc.py single -f fasta -u /home/username/Flnc/example/Test.fa -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output6
 
-Example 7: Evaluate if or not the input transcripts (in BED format) are true lncRNAs
+**Example 7: Evaluate if or not the input transcripts (in BED format) are true lncRNAs**
 python2 Flnc.py single -f bed -u /home/username/Flnc/example/Test.bed -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output7
 
 
