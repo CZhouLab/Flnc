@@ -168,9 +168,6 @@ If the input file is in the FASTA or BED format, it will output the following fo
 
 (5) Alignment summary file for each replicate output by HISAT2. 
 
-
-
-
-
-
-
+## Running time
+	
+The time required to execute the entire Flnc pipeline (starting from raw RNA-seq reads) launched on a cluster of standard Linux nodes (Intel® Xeon® CPU E5-2650 v3 @ 2.30GHz, 128G memory and 20 cores) varied for test cases with different replicates and different sequencing techniques (single end vs paired-end). For single-end RNA-seq data with 30-40 million reads per replicate, the running time ranges from 2-3 hours for test cases with one replicate per condition to 4-6 h for test cases with 2-3 replicates per condition. For paired-end RNA-seq data with 30-40 million reads per replicate, the running time ranges from 5-10 h for test cases with one replicate per condition to 8-20 h for test cases with 2-3 replicates per condition. About one-third to one-half of the computing time was consumed by the feature extraction.
