@@ -65,9 +65,10 @@ The Flnc tool has two subcommands single and pair. The single subcommand can tak
 
 When running Flnc with paired RNA-seq data, it is critical that the *_1 files and the *_2 files of replicates appear in separate comma-delimited lists, and that the order of the files in the two lists is the same.
 
-Subcommands:		choose one of the subcommands {pair,single}                
+**Subcommands:**		choose one of the subcommands {pair,single}                
 
-Arguments:
+**Arguments:**
+
 -f, --format 		The format of the input file: fastq, or fasta or bed
                        	 	If using the pair subcommand, the format must be “fastq”.
                        	 	If using single subcommand, the format can be fastq, or fasta, or bed.
