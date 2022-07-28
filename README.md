@@ -80,7 +80,7 @@ Arguments:
 			The mate 2 of replicates can be input through comma delimitation, e.g., “<path>/Rep1_2.fastq,<path>/Rep2_2.fastq”.
 	-u FILE		This argument is mandatory if using the single subcommand.
 			Full path of the single input file. 
-			If “-f fastq”, please input the full path of FASTQ file of single-end RNA-seq data. FASTQ files for replicates can be input through comma delimitation, For example, “<path>/Rep1.fastq,<path>/Rep2.fastq”. 
+			\If “-f fastq”, please input the full path of FASTQ file of single-end RNA-seq data. FASTQ files for replicates can be input through comma delimitation, For example, “<path>/Rep1.fastq,<path>/Rep2.fastq”. 
 			If “-f fasta”, please input the full path of files with transcripts in FASTA format.
 			If “-f bed”, please input the full path of files with transcripts in BED format.
 	-l --library	Full path of the LIB folder, which can be downloaded from https://zhoulab.umassmed.edu/Flnc_data/LIB/
