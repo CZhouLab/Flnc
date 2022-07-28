@@ -49,6 +49,23 @@ wget -rc https://zhoulab.umassmed.edu/Flnc_data/LIB
 mv https://zhoulab.umassmed.edu/Flnc_data/LIB LIB
 
 
+## Running Flnc
+
+The Flnc tool has two subcommands single and pair. The single subcommand can take three types of input files: single-end RNA-seq data in FASTQ format, and transcript data either in BED format or in FASTA format. The pair subcommand can take two ends of the paired-end RNA-seq data in FASTQ format as the input.
+
+**Note:**
+o	Flnc can accept the FASTQ files compressed by gzip as input files. 
+
+o	The input file should be in Linux format. If the file was created in DOS/Windows, it should be converted to Linux format (e.g. using dos2unix. See https://phoenixnap.com/kb/convert-dos-to-unix for detail).  
+
+o	The reference gene annotation should be the GTF format file for hg38 assembly.
+
+**Usage:** python2 Flnc.py {pair,single} -l LIBRARY -o OUTPUT_DIR -f {fastq,fasta,bed} {-1 FILE1 -2 FILE2 | -u FILE} [optional options]
+
+When running Flnc with paired RNA-seq data, it is critical that the *_1 files and the *_2 files of replicates appear in separate comma-delimited lists, and that the order of the files in the two lists is the same.
+
+
+
 
 
 
