@@ -44,7 +44,8 @@ chmod 755 *.py
 ### Step 2: Download LIB folder from https://zhoulab.umassmed.edu/Flnc_data/
 ```bash
 wget -c https://zhoulab.umassmed.edu/Flnc_data/LIB.zip
-mv https://zhoulab.umassmed.edu/Flnc_data/LIB /home/username/Flnc/LIB
+unzip LIB.zip
+mv LIB /home/username/Flnc/LIB
 ```
 
 ## Running Flnc
