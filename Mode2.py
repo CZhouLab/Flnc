@@ -40,7 +40,7 @@ def True_LncRNA_Infor(OutputDic, LIB):
                 cmd_Run.communicate()
                 f.close()
 
-                cmd_1 = "awk 'NR==1 || $14==1' FS=\"\t\" OFS=\"\t\" " + True_LncRNA_BED + ".tmp | cut -f 1-12 >" + True_LncRNA_BED
+                cmd_1 = "awk 'NR==1 || $14==1' FS=\"\\t\" OFS=\"\\t\" " + True_LncRNA_BED + ".tmp | cut -f 1-12 >" + True_LncRNA_BED
                 os.system(cmd_1)
                 os.system("rm -f " + True_LncRNA_BED + ".tmp")
 
@@ -51,7 +51,7 @@ def True_LncRNA_Infor(OutputDic, LIB):
                 cmd_Run.communicate()
                 f.close()
 
-                cmd_1 = "awk 'NR==1 || $NF==\"1\" {print}' FS=\"\\t\" OFS=\"\\t\" " + True_LncRNA_infor + ".tmp | cut -f 1-7 >" + True_LncRNA_infor
+                cmd_1 = "awk 'NR==1 || $NF==\"1\" {print}' FS=\"\\t\" OFS=\"\\t\" " + True_LncRNA_infor + ".tmp | cut -f 1-10 >" + True_LncRNA_infor
                 os.system(cmd_1)
                 os.system("rm -f " + True_LncRNA_infor + ".tmp")
 
@@ -62,8 +62,9 @@ def TrueLncRNA_PredictFrom_PutativeLncRNABED(PutativeLncRNABED, library, OutputD
         step_index = step_index + 1
 
         os.system("mkdir " + OutputDic + "/output")
-        
-        cmd = "awk '{print $1,$2,$3,$5,$4,$7,$6}' FS=\"\t\" OFS=\"\t\" " + OutputDic + "/lncRNA.features >" + OutputDic + "/output/putative_lncRNA_infor.txt"
+       
+        os.system('echo -e TranscriptID"\t"LocusID"\t"Multi_Exon"\t"Divergent"\t"Antisense"\t"Intergenic"\t"Promoter"\t"TranscriptLength"\t"FPKM"\t"ReadCount >' + OutputDic + '/output/putative_lncRNA_infor.txt')
+        cmd = "awk 'NR!=1 {print $1,\"NA\",$2,$3,$5,$4,$7,$6,\"NA\",\"NA\"}' FS=\"\\t\" OFS=\"\\t\" " + OutputDic + "/lncRNA.features >>" + OutputDic + "/output/putative_lncRNA_infor.txt"
         os.system(cmd)
         os.system("cut -f 1-12 " + OutputDic + "/input.bed >" + OutputDic + "/output/putative_lncRNAs.bed")
         os.system("sed -i '1i chrom\tchromStart\tchromEnd\tname\tscore\tstrand\tthickStart\tthickEnd\titemRgb\tblockCount\tblockSizes\tblockStarts' " + OutputDic + "/output/putative_lncRNAs.bed") 

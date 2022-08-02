@@ -231,7 +231,7 @@ def StringTie_Merge(GTF_MergeList_File, OutputDic, LIB, json_file):
         cmd_Run.communicate()
 
         Stringtie_merged_gtf_tmp = OutputDic + '/stringtie_merged.gtf.tmp'
-        cmd_1 = "awk '$1!~/chrKI/ && $1!~/^GL/ && $7!=\".\" {print}' FS=\"\t\" OFS=\"\t\" " + Stringtie_merged_gtf + " >" + Stringtie_merged_gtf_tmp
+        cmd_1 = "awk '$1!~/chrKI/ && $1!~/^GL/ && $7!=\".\" {print}' FS=\"\\t\" OFS=\"\\t\" " + Stringtie_merged_gtf + " >" + Stringtie_merged_gtf_tmp
         os.system(cmd_1)
         os.system("mv " + Stringtie_merged_gtf_tmp + " " + Stringtie_merged_gtf)
 
@@ -337,7 +337,7 @@ def CPAT(FASTA_file, OutputDic, LIB, json_file):
         cmd_2_Run = subprocess.Popen([LIB+'/centos_0.2.sif', 'Rscript'] + cmd_2_R.split())
         cmd_2_Run.communicate()
        
-        cmd_3 = "awk 'NR!=1 && $6>=0.364 {print $1}' FS=\"\t\" OFS=\"\t\" " + OutputDic + "/cpat.out | cut -d\"(\" -f 1 | sort | uniq >" + OutputDic + "/cpat.out.CodingTranscript.id"
+        cmd_3 = "awk 'NR!=1 && $6>=0.364 {print $1}' FS=\"\\t\" OFS=\"\\t\" " + OutputDic + "/cpat.out | cut -d\"(\" -f 1 | sort | uniq >" + OutputDic + "/cpat.out.CodingTranscript.id"
         os.system(cmd_3)
         
         TimeNow = str(datetime.datetime.now())
@@ -350,7 +350,7 @@ def LGC(FASTA_file, OutputDic, LIB):
         cmd_1_Run = subprocess.Popen([LIB+'/centos_0.3.sif', 'lgc-1.0.0.py'] + cmd_1_R.split())
         cmd_1_Run.communicate()
         
-        cmd_2 = "awk '$5==\"Coding\" {print $1}' FS=\"\t\" OFS=\"\t\" " + OutputDic + "/LGC.out | cut -d\"(\" -f 1 | sort | uniq >" + OutputDic + "/LGC.out.CodingTranscript.id"
+        cmd_2 = "awk '$5==\"Coding\" {print $1}' FS=\"\\t\" OFS=\"\\t\" " + OutputDic + "/LGC.out | cut -d\"(\" -f 1 | sort | uniq >" + OutputDic + "/LGC.out.CodingTranscript.id"
         os.system(cmd_2)
 
         TimeNow = str(datetime.datetime.now())
@@ -363,7 +363,7 @@ def PLEK(FASTA_file, OutputDic, LIB):
         cmd_1_Run = subprocess.Popen([LIB+'/centos_0.1.sif'] + cmd_1_R.split())
         cmd_1_Run.communicate()
 
-        cmd_2 = "awk '$1==\"Coding\" {print $3}' FS=\"\t\" OFS=\"\t\" " + OutputDic + "/PLEK.out | cut -d\">\" -f 2 | cut -d\"(\" -f 1 | sort | uniq >" + OutputDic + "/PLEK.out.CodingTranscript.id"
+        cmd_2 = "awk '$1==\"Coding\" {print $3}' FS=\"\\t\" OFS=\"\\t\" " + OutputDic + "/PLEK.out | cut -d\">\" -f 2 | cut -d\"(\" -f 1 | sort | uniq >" + OutputDic + "/PLEK.out.CodingTranscript.id"
         os.system(cmd_2)
         
         TimeNow = str(datetime.datetime.now())
@@ -390,7 +390,7 @@ def CPPred(FASTA_file, OutputDic, LIB, json_file):
        
         os.chdir(Current_path)
 
-        cmd_2 = "awk '$(NF-1)==\"coding\" {print $1}' FS=\"\t\" OFS=\"\t\" " + OutputDic + "/CPPred.out | cut -d\"(\" -f 1 | sort | uniq >" + OutputDic + "/CPPred.out.CodingTranscript.id"
+        cmd_2 = "awk '$(NF-1)==\"coding\" {print $1}' FS=\"\\t\" OFS=\"\\t\" " + OutputDic + "/CPPred.out | cut -d\"(\" -f 1 | sort | uniq >" + OutputDic + "/CPPred.out.CodingTranscript.id"
         os.system(cmd_2)
 
         TimeNow = str(datetime.datetime.now())
@@ -412,7 +412,7 @@ def Get_CodingTranscript_BED(gtf_file, BED_file, CodingTranscript_list, LIB):
         cmd_2_Run.communicate()
         f2.close()
 
-        cmd_3 = "awk '$13!=\"\"' FS=\"\t\" OFS=\"\t\" " + CodingTranscript_list + ".out.bed.tmp | cut -f 1-12 >" + CodingTranscript_list + ".out.bed"
+        cmd_3 = "awk '$13!=\"\"' FS=\"\\t\" OFS=\"\\t\" " + CodingTranscript_list + ".out.bed.tmp | cut -f 1-12 >" + CodingTranscript_list + ".out.bed"
         os.system(cmd_3)
 
         os.system("rm -f " + CodingTranscript_list + '.out.bed.tmp')
@@ -551,7 +551,7 @@ def SelectExpress(Replicate_index, OutputDic, LIB):
         cutoff = os.popen(LIB+"/centos_0.2.sif Rscript "+LIB+"/src/FPKM_Cutoff.R {Expression_file} {BED_file}".format(Expression_file = Expression_file, BED_file = BED_file)).read()
         cutoff = cutoff.split('\n')[-2].split()[-1]
 
-        cmd_1 = ("awk 'NR!=1 && ($3>%s && $4>10) {print $1}' FS=\"\t\" OFS=\"\t\" " % cutoff) + Expression_file + " >" + OutputDic + "/Rep" + Replicate_index + "_expressed_transcripts.id"
+        cmd_1 = ("awk 'NR!=1 && ($3>%s && $4>10) {print $1}' FS=\"\\t\" OFS=\"\\t\" " % cutoff) + Expression_file + " >" + OutputDic + "/Rep" + Replicate_index + "_expressed_transcripts.id"
         os.system(cmd_1)           
         
         return OutputDic + "/Rep" + Replicate_index + "_expressed_transcripts.id"
@@ -566,7 +566,7 @@ def PutativeLncRNA_Generation(Expressed_transcripts_file, OutputDic, LIB):
         cmd_3_Run.communicate()
         f3.close()
 
-        cmd_4 = "awk '$13!=\"\"' FS=\"\t\" OFS=\"\t\" " + BED_file + ".Expressed_tmp1 | cut -f 1-12 >" + BED_file + ".Expressed_tmp2"
+        cmd_4 = "awk '$13!=\"\"' FS=\"\\t\" OFS=\"\\t\" " + BED_file + ".Expressed_tmp1 | cut -f 1-12 >" + BED_file + ".Expressed_tmp2"
         os.system(cmd_4)
         
         cmd_5 = LIB+'/src/my_join.pl -a {BED_file}.Expressed_tmp2 -b {OutputDic}/stringtie_merged.changeID.gtf.Gene_Transcript -F 4 -f 2'
@@ -576,7 +576,7 @@ def PutativeLncRNA_Generation(Expressed_transcripts_file, OutputDic, LIB):
         cmd_5_Run.communicate()
         f5.close()
 
-        cmd_6 = "awk '$1!~/chrKI/ && $1!~/^GL/ && $14!=\"\"' FS=\"\t\" OFS=\"\t\" " + BED_file + ".Expressed_tmp3 | cut -f 1-13 | sort | uniq >" + OutputDic + "/lncRNA.bed"
+        cmd_6 = "awk '$1!~/chrKI/ && $1!~/^GL/ && $14!=\"\"' FS=\"\\t\" OFS=\"\\t\" " + BED_file + ".Expressed_tmp3 | cut -f 1-13 | sort | uniq >" + OutputDic + "/lncRNA.bed"
         os.system(cmd_6)
 
         os.system("rm -f " + BED_file + ".Expressed_tmp1")
@@ -672,7 +672,7 @@ def True_LncRNA_Infor(Replicate_count, OutputDic, LIB, user_json_file):
         fp = open(OutputDic + "/output/putative_lncRNAs.bed", "w")
         fp.write("chrom\tchromStart\tchromEnd\tname\tscore\tstrand\tthickStart\tthickEnd\titemRgb\tblockCount\tblockSizes\tblockStarts\n")
         fo = open(OutputDic + "/output/putative_lncRNA_infor.txt", "w")
-        fo.write("TranscriptID\tLociID\tMulti_Exon\tDivergent\tAntisense\tIntergenic\tPromoter\tTranscriptLength\t"+"\t".join(FPKM_file_list)+"\t"+"\t".join(ReadCount_file_list)+"\n")
+        fo.write("TranscriptID\tLocusID\tMulti_Exon\tDivergent\tAntisense\tIntergenic\tPromoter\tTranscriptLength\t"+"\t".join(FPKM_file_list)+"\t"+"\t".join(ReadCount_file_list)+"\n")
         for line_y in fy:
                 line_y = line_y.strip()
                 element_y = line_y.split("\t")
@@ -703,7 +703,7 @@ def True_LncRNA_Infor(Replicate_count, OutputDic, LIB, user_json_file):
                 cmd_Run.communicate()
                 f.close()
 
-                cmd_1 = "awk 'NR==1 || $14==1' FS=\"\t\" OFS=\"\t\" " + True_LncRNA_BED + ".tmp | cut -f 1-12 >" + True_LncRNA_BED
+                cmd_1 = "awk 'NR==1 || $14==1' FS=\"\\t\" OFS=\"\\t\" " + True_LncRNA_BED + ".tmp | cut -f 1-12 >" + True_LncRNA_BED
                 os.system(cmd_1)
                 os.system("rm -f " + True_LncRNA_BED + ".tmp")
 
@@ -714,9 +714,10 @@ def True_LncRNA_Infor(Replicate_count, OutputDic, LIB, user_json_file):
                 cmd_Run.communicate()
                 f.close()
 
-                cmd_1 = "awk 'NR==1 || $NF==\"1\" {print}' FS=\"\\t\" OFS=\"\\t\" " + True_LncRNA_infor + ".tmp | rev | cut -f 2- | rev >" + True_LncRNA_infor
+                os.system("sed '/^TranscriptID/{s/\t$/\tID\tLabel/}' " + True_LncRNA_infor + ".tmp >" + True_LncRNA_infor + ".tmp1")
+                cmd_1 = "awk 'NR==1 || $NF==\"1\" {print}' FS=\"\\t\" OFS=\"\\t\" " + True_LncRNA_infor + ".tmp1 | rev | cut -f 3- | rev >" + True_LncRNA_infor
                 os.system(cmd_1)
-                os.system("rm -f " + True_LncRNA_infor + ".tmp")
+                os.system("rm -f " + True_LncRNA_infor + ".tmp*")
 
 def TrueLncRNA_PredictFrom_PutativeLncRNABED(Replicate_count, PutativeLncRNABED, library, OutputDic, model, user_json_file, step_index = 1):
         Share.Features(PutativeLncRNABED, OutputDic, library, user_json_file)

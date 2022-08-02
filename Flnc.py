@@ -72,7 +72,7 @@ def process_singleend_fastq(input_file, library, output_dir, strand, model, gtf_
         GTF_List=[]
         for i in range(0,len(Replicate_list)):
                 Rep_index = i+1
-                Rep_fastq = Replicate_list[i] 
+                Rep_fastq = Replicate_list[i].strip() 
                 Mode1.HISAT2_Alignment_SingleEnd(str(Rep_index), Rep_fastq, strand, output_dir, library, user_json_file) 
                 StringTie_GTF = Mode1.StringTie_Assembly(str(Rep_index), strand, output_dir, library, user_json_file)
                 Strawberry_GTF = Mode1.Strawberry_Assembly(str(Rep_index), strand, output_dir, library, user_json_file)
@@ -128,8 +128,8 @@ def process_pairend_fastq(input_R1_file, input_R2_file, library, output_dir, str
         GTF_List=[]
         for i in range(0,len(Replicate_list_R1)):
                 Rep_index = i+1
-                Rep_fastq_R1 = Replicate_list_R1[i]
-                Rep_fastq_R2 = Replicate_list_R2[i]
+                Rep_fastq_R1 = Replicate_list_R1[i].strip()
+                Rep_fastq_R2 = Replicate_list_R2[i].strip()
                 Mode1.HISAT2_Alignment_PairedEnd(str(Rep_index), Rep_fastq_R1, Rep_fastq_R2, strand, output_dir, library, user_json_file) 
                 StringTie_GTF = Mode1.StringTie_Assembly(str(Rep_index), strand, output_dir, library, user_json_file)
                 Strawberry_GTF = Mode1.Strawberry_Assembly(str(Rep_index), strand, output_dir, library, user_json_file)

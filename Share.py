@@ -141,7 +141,7 @@ def Genomic_Structure(BED_file, LIB, json_file):
         cmd_4_Run.communicate()
         f4.close()
 
-        cmd_5 = "awk '$14==\"\"' FS=\"\t\" OFS=\"\t\" " + BED_file + ".non-divergent.tmp1 | cut -f 1-13 >" + BED_file + ".non-divergent.tmp2"
+        cmd_5 = "awk '$14==\"\"' FS=\"\\t\" OFS=\"\\t\" " + BED_file + ".non-divergent.tmp1 | cut -f 1-13 >" + BED_file + ".non-divergent.tmp2"
         os.system(cmd_5)
 
         os.system(LIB+"/centos_0.1.sif python "+LIB+"/src/bed2gtf.py " + BED_file + ".non-divergent.tmp2 >" + BED_file + ".non-divergent.gtf")
@@ -166,8 +166,8 @@ def Genomic_Structure(BED_file, LIB, json_file):
         return BED_file + '.Genomic_Structure'
 
 def Single_Multi_Exon(BED_file):
-        cmd_1 = "awk '$10==1 {print $4,\"SE\"}' FS=\"\t\" OFS=\"\t\" " + BED_file + " >" + BED_file + ".SE"
-        cmd_2 = "awk '$10>1 {print $4,\"ME\"}' FS=\"\t\" OFS=\"\t\" " + BED_file + " >" + BED_file + ".ME"
+        cmd_1 = "awk '$10==1 {print $4,\"SE\"}' FS=\"\\t\" OFS=\"\\t\" " + BED_file + " >" + BED_file + ".SE"
+        cmd_2 = "awk '$10>1 {print $4,\"ME\"}' FS=\"\\t\" OFS=\"\\t\" " + BED_file + " >" + BED_file + ".ME"
         cmd_3 = "cat " + BED_file + ".SE " + BED_file + ".ME >" + BED_file + ".Single_Multi_Exon"
         os.system(cmd_1)
         os.system(cmd_2)
