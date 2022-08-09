@@ -8,7 +8,7 @@ Flnc integrates seven machine-learning algorithms built with four genomic featur
 
 ![workflow](Picture1.png)
 
-**Please cite our paper at BioRxiv, if you find Flnc useful for your research. The paper has been submitted to a peer-reviewed journal**
+**Please cite our paper at BioRxiv(https://www.biorxiv.org/content/10.1101/2022.08.02.502545v1), if you find Flnc useful for your research. The paper has been submitted to a peer-reviewed journal**
 
 Version: 1.0.0
 
