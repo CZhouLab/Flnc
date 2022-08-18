@@ -151,7 +151,7 @@ If the input file is in the FASTA or BED format, it will output the following fo
 
 (1) true_lncRNA.\<model\>.bed: contains the true lncRNAs predicted by the selected model in standard BED format with the full 12 fields. (https://genome.ucsc.edu/FAQ/FAQformat.html#format1)
 
-(2) true_lncRNA_infor.<model>.txt: contains the expression and genomic features information of the identified true lncRNAs as follows.
+(2) true_lncRNA_infor.\<model\>.txt: contains the expression and genomic features information of the identified true lncRNAs as follows.
 | Field(column)| Description                                   |
 | :-----------:| :---------------------------------------------|
 | TranscriptID	       | Transcript ID (same as the 4th column in true_lncRNA.bed)                                   |
@@ -167,7 +167,7 @@ If the input file is in the FASTA or BED format, it will output the following fo
 
 (3) putative_lncRNAs.bed: Contains putative lncRNAs, which are transcripts without coding abilities. The BED file follows the standard BED format with the full 12 fields. (https://genome.ucsc.edu/FAQ/FAQformat.html#format1)
 
-(4) putative_lncRNA_infor.txt: contains the expression and genomic features information of all putative lncRNAs with the same format as the “true_lncRNA_infor.<model>.txt” outfile.
+(4) putative_lncRNA_infor.txt: contains the expression and genomic features information of all putative lncRNAs with the same format as the “true_lncRNA_infor.\<model\>.txt” outfile.
 
 (5) Alignment summary file for each replicate output by HISAT2. 
 
