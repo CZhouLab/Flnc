@@ -149,7 +149,7 @@ python2 Flnc.py single -f bed -u /home/username/Flnc/example/Test.bed -l /home/u
 
 If the input file is in the FASTA or BED format, it will output the following four files with “true_lncRNA” or “putative_lncRNA” as the prefix; if the input file is in the FASTQ format, it will output the following five files.
 
-(1) true_lncRNA.<model>.bed: contains the true lncRNAs predicted by the selected model in standard BED format with the full 12 fields. (https://genome.ucsc.edu/FAQ/FAQformat.html#format1)
+(1) true_lncRNA.\<model\>.bed: contains the true lncRNAs predicted by the selected model in standard BED format with the full 12 fields. (https://genome.ucsc.edu/FAQ/FAQformat.html#format1)
 
 (2) true_lncRNA_infor.<model>.txt: contains the expression and genomic features information of the identified true lncRNAs as follows.
 | Field(column)| Description                                   |
