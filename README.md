@@ -25,7 +25,7 @@ To use Flnc, you will need the following programs in your PATH:
 
 •       singularity (>=3.7.1)
 
-•       python2 (>=2.7.18) 
+•       python2 (>=2.7) 
 
 •       OS: high performance computing cluster in Linux (suggested)
 
