@@ -64,7 +64,7 @@ The Flnc tool has two subcommands single and pair. The single subcommand can tak
 
 **Usage** 
 ```bash
-python2 Flnc.py {pair,single} -l LIBRARY -o OUTPUT_DIR -f {fastq,fasta,bed} {-1 FILE1 -2 FILE2 | -u FILE} [optional options]
+python2 /home/username/Flnc/Flnc.py {pair,single} -l LIBRARY -o OUTPUT_DIR -f {fastq,fasta,bed} {-1 FILE1 -2 FILE2 | -u FILE} [optional options]
 
 When running Flnc with paired RNA-seq data, it is critical that the *_1 files and the *_2 files of replicates appear in separate comma-delimited lists, and that the order of the files in the two lists is the same.
 
@@ -118,31 +118,31 @@ The sample input files are available from https://zhoulab.umassmed.edu/Flnc_data
 
 **Example 1: Identify lncRNAs from single-end RNA-seq data with single replicate by default parameters**
 ```bash
-python2 Flnc.py single -f fastq -u /home/username/Flnc/example/GSM3039399.fastq.gz -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output1 -s first
+python2 /home/username/Flnc/Flnc.py single -f fastq -u /home/username/Flnc/example/GSM3039399.fastq.gz -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output1 -s first
 ```
 **Example 2: Identify lncRNAs with customized model**
 ```bash
-python2 Flnc.py single -f fastq -u /home/username/Flnc/example/GSM3039399.fastq.gz -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output2 -s first -m ensemble
+python2 /home/username/Flnc/Flnc.py single -f fastq -u /home/username/Flnc/example/GSM3039399.fastq.gz -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output2 -s first -m ensemble
 ```
 **Example 3: Identify lncRNAs with customized gene annotation file (e.g. /home/username/Flnc/gencode.v30.gtf)**
 ```bash
-python2 Flnc.py single -f fastq -u /home/username/Flnc/example/GSM3039399.fastq.gz -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output3 -s first -g /home/username/Flnc/gencode.v30.gtf
+python2 /home/username/Flnc/Flnc.py single -f fastq -u /home/username/Flnc/example/GSM3039399.fastq.gz -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output3 -s first -g /home/username/Flnc/gencode.v30.gtf
 ```
 **Example 4: Identify lncRNAs from single-end RNA-seq data with three replicates by default parameters**
 ```bash
-python2 Flnc.py single -f fastq -u /home/username/Flnc/example/GSM1462975.fastq.gz, /home/username/Flnc/example/GSM1462976.fastq.gz,/home/username/Flnc/example/ GSM1462977.fastq.gz -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output4 -s first
+python2 /home/username/Flnc/Flnc.py single -f fastq -u /home/username/Flnc/example/GSM1462975.fastq.gz, /home/username/Flnc/example/GSM1462976.fastq.gz,/home/username/Flnc/example/ GSM1462977.fastq.gz -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output4 -s first
 ```
 **Example 5: Identify lncRNAs from paired-end RNA-seq data with single replicate by default parameters**
 ```bash
-python2 Flnc.py pair -f fastq -1 /home/username/Flnc/example/GSM4193226_1.fastq.gz -2 /hom/username/Flnc/example/GSM4193226_2.fastq.gz -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output5 -s first
+python2 /home/username/Flnc/Flnc.py pair -f fastq -1 /home/username/Flnc/example/GSM4193226_1.fastq.gz -2 /hom/username/Flnc/example/GSM4193226_2.fastq.gz -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output5 -s first
 ```
 **Example 6: Evaluate if or not the input transcripts (in FASTA format) are true lncRNAs**
 ```bash
-python2 Flnc.py single -f fasta -u /home/username/Flnc/example/Test.fa -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output6
+python2 /home/username/Flnc/Flnc.py single -f fasta -u /home/username/Flnc/example/Test.fa -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output6
 ```
 **Example 7: Evaluate if or not the input transcripts (in BED format) are true lncRNAs**
 ```bash
-python2 Flnc.py single -f bed -u /home/username/Flnc/example/Test.bed -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output7
+python2 /home/username/Flnc/Flnc.py single -f bed -u /home/username/Flnc/example/Test.bed -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output7
 ```
 
 ## Output files
