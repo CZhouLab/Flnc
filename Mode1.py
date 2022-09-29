@@ -669,7 +669,7 @@ def True_LncRNA_Infor(Replicate_count, OutputDic, LIB, user_json_file):
         fk.close()
 
         fy = open(PutativeLncRNA_BED, "r")
-        fp = open(OutputDic + "/output/putative_lncRNAs.bed", "w")
+        fp = open(OutputDic + "/output/putative_lncRNA.bed", "w")
         fp.write("chrom\tchromStart\tchromEnd\tname\tscore\tstrand\tthickStart\tthickEnd\titemRgb\tblockCount\tblockSizes\tblockStarts\n")
         fo = open(OutputDic + "/output/putative_lncRNA_infor.txt", "w")
         fo.write("TranscriptID\tLocusID\tMulti_Exon\tDivergent\tAntisense\tIntergenic\tPromoter\tTranscriptLength\t"+"\t".join(FPKM_file_list)+"\t"+"\t".join(ReadCount_file_list)+"\n")
@@ -696,7 +696,7 @@ def True_LncRNA_Infor(Replicate_count, OutputDic, LIB, user_json_file):
                 True_LncRNA_BED = OutputDic + "/true_lncRNA." + model_name + ".bed"
                 True_LncRNA_infor = OutputDic + "/true_lncRNA_infor." + model_name + ".txt" 
 
-                cmd = LIB+'/src/my_join.pl -a {OutputDic}/output/putative_lncRNAs.bed -b {True_LncRNA_Predict_file} -F 4 -f 1'
+                cmd = LIB+'/src/my_join.pl -a {OutputDic}/output/putative_lncRNA.bed -b {True_LncRNA_Predict_file} -F 4 -f 1'
                 cmd_R = cmd.format(OutputDic = OutputDic, True_LncRNA_Predict_file = True_LncRNA_Predict_file)
                 f = open(True_LncRNA_BED+".tmp", "w")
                 cmd_Run = subprocess.Popen([LIB+'/centos_0.1.sif', 'perl'] + cmd_R.split(), stdout = f)

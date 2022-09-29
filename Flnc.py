@@ -241,6 +241,8 @@ else:
 
 if not os.path.isdir(args.output_dir):
         os.mkdir(args.output_dir)
+if not os.path.isdir(args.output_dir+"/output"):        
+        os.mkdir(args.output_dir+"/output")
 
 user_json_file = Share.load_reference(args)
 

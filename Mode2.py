@@ -33,7 +33,7 @@ def True_LncRNA_Infor(OutputDic, LIB):
                 True_LncRNA_BED = OutputDic + "/true_lncRNA." + model_name + ".bed"
                 True_LncRNA_infor = OutputDic + "/true_lncRNA_infor." + model_name + ".txt"
 
-                cmd = LIB+'/src/my_join.pl -a {OutputDic}/output/putative_lncRNAs.bed -b {True_LncRNA_Predict_file} -F 4 -f 1'
+                cmd = LIB+'/src/my_join.pl -a {OutputDic}/output/putative_lncRNA.bed -b {True_LncRNA_Predict_file} -F 4 -f 1'
                 cmd_R = cmd.format(OutputDic = OutputDic, True_LncRNA_Predict_file = True_LncRNA_Predict_file)
                 f = open(True_LncRNA_BED+".tmp", "w")
                 cmd_Run = subprocess.Popen([LIB+'/centos_0.1.sif', 'perl'] + cmd_R.split(), stdout = f)
@@ -66,8 +66,8 @@ def TrueLncRNA_PredictFrom_PutativeLncRNABED(PutativeLncRNABED, library, OutputD
         os.system('echo -e TranscriptID"\t"LocusID"\t"Multi_Exon"\t"Divergent"\t"Antisense"\t"Intergenic"\t"Promoter"\t"TranscriptLength"\t"FPKM"\t"ReadCount >' + OutputDic + '/output/putative_lncRNA_infor.txt')
         cmd = "awk 'NR!=1 {print $1,\"NA\",$2,$3,$5,$4,$7,$6,\"NA\",\"NA\"}' FS=\"\\t\" OFS=\"\\t\" " + OutputDic + "/lncRNA.features >>" + OutputDic + "/output/putative_lncRNA_infor.txt"
         os.system(cmd)
-        os.system("cut -f 1-12 " + OutputDic + "/input.bed >" + OutputDic + "/output/putative_lncRNAs.bed")
-        os.system("sed -i '1i chrom\tchromStart\tchromEnd\tname\tscore\tstrand\tthickStart\tthickEnd\titemRgb\tblockCount\tblockSizes\tblockStarts' " + OutputDic + "/output/putative_lncRNAs.bed") 
+        os.system("cut -f 1-12 " + OutputDic + "/input.bed >" + OutputDic + "/output/putative_lncRNA.bed")
+        os.system("sed -i '1i chrom\tchromStart\tchromEnd\tname\tscore\tstrand\tthickStart\tthickEnd\titemRgb\tblockCount\tblockSizes\tblockStarts' " + OutputDic + "/output/putative_lncRNA.bed") 
 
         Share.True_LncRNA_Predict(OutputDic, library, user_json_file)
         True_LncRNA_Infor(OutputDic, library)
