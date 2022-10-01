@@ -145,6 +145,12 @@ python2 Flnc.py single -f fasta -u /home/username/Flnc/example/Test.fa -l /home/
 python2 Flnc.py single -f bed -u /home/username/Flnc/example/Test.bed -l /home/username/Flnc/LIB -o /home/username/Flnc/sample_output7
 ```
 
+## Recommendations for the model options
+
+For stranded polyA-selected RNA-seq data, --model ensemble is recommended if the users would like to have the best prediction precision and specificity; If the users would like to balance the prediction sensitivity and specificity, --model rf is recommended.
+
+For rRNA-depleted RNA-seq and unstranded RNA-seq data, --model lsvm or --model nb is recommended.
+
 ## Output files
 
 If the input file is in the FASTA or BED format, it will output the following four files with “true_lncRNA” or “putative_lncRNA” as the prefix; if the input file is in the FASTQ format, it will output the following five files.
