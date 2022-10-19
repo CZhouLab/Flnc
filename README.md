@@ -8,7 +8,7 @@ Flnc integrates seven machine-learning algorithms built with four genomic featur
 
 ![workflow](Picture1.png)
 
-**Please cite our paper at Non-Coding RNA journal(https://doi.org/10.3390/ncrna8050070), if you find Flnc useful for your research. 
+**Please cite our paper at *Non-Coding RNA* journal (https://doi.org/10.3390/ncrna8050070), if you find Flnc useful for your research. 
 
 Version: 1.0.0
 
