@@ -58,7 +58,7 @@ The Flnc tool has two subcommands single and pair. The single subcommand can tak
 
 **Note:**
 
--	Flnc can accept the FASTQ files compressed by gzip as input files. 
+-	Flnc can accept the FASTQ files uncompressed (.fastq) or compressed by gzip (.fastq.gz) as input files. 
 
 -	The input file should be in Linux format. If the file was created in DOS/Windows, it should be converted to Linux format (e.g. using dos2unix. See https://phoenixnap.com/kb/convert-dos-to-unix for detail).  
 
