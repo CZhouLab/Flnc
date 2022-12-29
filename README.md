@@ -64,6 +64,8 @@ The Flnc tool has two subcommands single and pair. The single subcommand can tak
 
 -	The reference gene annotation should be the GTF format file for hg38 assembly.
 
+-	**Make sure that singularity software have read permission for the input files, and have both read and write permission for files in the output folder. We recommend depositing the input files and specifying output folder to be on the same hard drive (disk) with the Flnc software.** 
+
 **Usage** 
 ```bash
 python2 Flnc.py {pair,single} -l LIBRARY -o OUTPUT_DIR -f {fastq,fasta,bed} {-1 FILE1 -2 FILE2 | -u FILE} [optional options]
