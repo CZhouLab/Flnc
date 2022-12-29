@@ -64,7 +64,7 @@ The Flnc tool has two subcommands single and pair. The single subcommand can tak
 
 -	The reference gene annotation should be the GTF format file for hg38 assembly.
 
--	<span style="color:red">some **Make sure that singularity software have read permission for the input files, and have both read and write permission for files in the output folder. We recommend depositing the input files and specifying output folder to be on the same hard drive (disk) with the Flnc software.**  text</span>
+-	<span style="color:orange;"> **Make sure that singularity software have read permission for the input files, and have both read and write permission for files in the output folder. We recommend depositing the input files and specifying output folder to be on the same hard drive (disk) with the Flnc software.**</span>
 
 **Usage** 
 ```bash
