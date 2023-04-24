@@ -44,7 +44,7 @@ cd Flnc
 chmod 755 *.py
 ```
 
-### Step 2: Download LIB folder from https://zhoulab.umassmed.edu/Flnc_data/
+### Step 2: Download LIB folder from Zenodo
 ```bash
 cd /home/username/Flnc
 wget -c https://zenodo.org/record/7853855/files/LIB.zip?download=1
