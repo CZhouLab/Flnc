@@ -90,7 +90,7 @@ Arguments:
 			If "-f fastq", please input the full path of FASTQ file of single-end RNA-seq data. FASTQ files for replicates can be input through comma delimitation, For example, "<path>/Rep1.fastq,<path>/Rep2.fastq". 
 			If "-f fasta", please input the full path of files with transcripts in FASTA format.
 			If "-f bed", please input the full path of files with transcripts in BED format.
-	-l --library	Full path of the LIB folder, which can be downloaded from https://zhoulab.umassmed.edu/Flnc_data/LIB/
+	-l --library	Full path of the LIB folder, which can be downloaded from https://zenodo.org/record/7853855/files/LIB.zip?download=1
 	-o --output_dir	Please specify the name of the output folder. This must be specified as a full path. For example, "-o /home/username/Flnc_sample1_output".
 
 Options:
@@ -118,7 +118,7 @@ Options:
 
 ## Examples
 
-The sample input files are available from https://zhoulab.umassmed.edu/Flnc_data/example.zip
+The sample input files are available from https://zenodo.org/record/7853855/files/example.zip?download=1
 
 **Example 1: Identify lncRNAs from single-end RNA-seq data with single replicate by default parameters**
 ```bash
